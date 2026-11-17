@@ -1,0 +1,22 @@
+# 签名与本地配置：绝对不要提交
+*.jks
+*.keystore
+keystore.properties
+local.properties
+
+# 构建产物
+build/
+.gradle/
+captures/
+.externalNativeBuild/
+.cxx/
+*.apk
+*.aab
+*.ap_
+*.dex
+!dist/*.apk
+
+# IDE
+.idea/
+*.iml
+.DS_Store
