@@ -4,14 +4,6 @@
 
 A fully offline sky simulator for Android. Pick a star or planet, pick an observing latitude, drag the time axis, and watch the sky change.
 
-## 截图 / Screenshots
-
-仓库暂未附带真机截图，可把横屏截图放进 `docs/screenshots/` 后取消下面两行的注释：
-
-```markdown
-![HUD 与右栏控制台](docs/screenshots/main-hud.png)
-![切换星球](docs/screenshots/planet-picker.png)
-```
 
 ## 核心特性 / Features
 
@@ -40,7 +32,6 @@ APK 校验：`SHA-256 e2452441196de43aae153813cd490ca39d32a25f639fc68bb01e9b4c3e
 
 关于权限：应用没有 INTERNET 权限。清单里唯一的 `<uses-permission>` 是 `com.skysim.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION`，这是 Android 构建工具为 targetSdk 33+ 自动注入的应用内动态广播权限，属自签名级别，与网络无关。
 
-关于包名：1.0 的包名是 `com.skysim.app`，与早期测试版 `com.skysim.tianyu` 不同。两者是两个独立应用，可以共存；但 1.0 无法覆盖安装旧版，旧版数据也不会迁移过来。
 
 ## 技术栈与项目结构 / Tech stack
 
@@ -73,14 +64,8 @@ Windows 用 `gradlew.bat assembleDebug`。首次运行会下载 Gradle 8.2.1 发
 
 也可以直接用 Android Studio 的 `File` → `Open` 打开仓库根目录，等 Sync 完成后运行测试或构建。
 
-`app/build.gradle.kts` 会在根目录存在 `keystore.properties` 时启用 `signingConfigs.release`；没有这个文件时 `assembleRelease` 仍然可以产出未签名包，方便只想编译的人。请不要把 keystore 提交进仓库，详见 [docs/构建与发布.md](docs/构建与发布.md)。
+`app/build.gradle.kts` 会在根目录存在 `keystore.properties` 时启用 `signingConfigs.release`；没有这个文件时 `assembleRelease` 仍然可以产出未签名包，方便只想编译的人。
 
-## 文档 / Docs
-
-- [设计说明](docs/设计说明.md)：时间体系与历法口径、纬度视角、效果图层的物理约束
-- [数据与天体](docs/数据与天体.md)：天体数据与代码分离的约定、如何新增天体
-- [构建与发布](docs/构建与发布.md)：本地构建、签名、发版流程
-- [多语言说明](MULTILANGUAGE.md)、[UI 设计说明](UI-DESIGN-0.9.5.md)、[更新记录](CHANGELOG.md)
 
 ## 已知限制 / Known limitations
 
